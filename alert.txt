@@ -1,0 +1,7 @@
+alert() is a built-in function used to display a popup dialog box with a message to the user. It's commonly used for:
+
+Showing notifications or warnings
+
+Debugging simple scripts
+
+Confirming actions or displaying results (like grades, scores, etc.)
