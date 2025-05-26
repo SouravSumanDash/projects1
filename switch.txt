@@ -1,0 +1,101 @@
+Basic switch Syntax
+
+switch(expression) {
+    case value1:
+        // Code block for value1
+        break;
+    case value2:
+        // Code block for value2
+        break;
+    // More cases...
+    default:
+        // Default code block if no case matches
+}
+🔑 Key Points:
+1. switch(expression): Evaluates an expression.
+2. case value:: If expression equals value, run the code.
+3. break;: Exits the switch after a match.
+4. default:: Runs if no case matches (optional).
+
+🌟 Example:
+
+let day = 3;
+
+switch(day) {
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    case 3:
+        console.log("Wednesday");
+        break;
+    default:
+        console.log("Other day");
+}
+
+
+In JavaScript, if you forget to use break in a switch case, something called fall-through happens.
+
+ What is Fall-Through?
+When the break statement is omitted, the program continues to execute all subsequent cases (even if they don’t match), until it hits a break or the end of the switch.
+
+🔍 Example Without break:
+
+let color = "yellow";
+
+switch(color) {
+    case "red":
+        console.log("Stop");
+    case "yellow":
+        console.log("Caution");
+    case "green":
+        console.log("Go");
+    default:
+        console.log("Invalid color");
+}
+OP:- Caution
+     Go
+     Invalid color
+
+
+     In JavaScript, the switch statement doesn’t support expressions (like case x > 10:) directly. The switch compares the expression value strictly (===) with each case label. So, case must contain a value, not a condition.
+
+🚫 Example That Won’t Work:
+
+let x = 15;
+
+switch(x) {
+    case x > 10: 
+        console.log("Greater than 10");
+        break;
+    default:
+        console.log("10 or less");
+}
+This code will not behave as expected because case x > 10 evaluates the condition immediately, which becomes true, and then compares x === true. That’s not what you want.
+
+✅ Correct Approach:
+Use an if...else chain or switch on true:
+
+
+let x = 15;
+
+switch(true) {
+    case x > 10:
+        console.log("Greater than 10");
+        break;
+    case x > 5:
+        console.log("Between 6 and 10");
+        break;
+    default:
+        console.log("5 or less");
+}
+Here, we switch on true, and each case checks a boolean expression. The first true case that matches will run.
+
+🧠 Key Takeaways:
+switch normally checks values strictly (===), not conditions.
+
+Use switch(true) if you need conditional logic like if...else if.
+
+Otherwise, stick to if...else. 
