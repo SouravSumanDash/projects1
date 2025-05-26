@@ -83,13 +83,45 @@ for (;;) {
     count++;
 } */
 
-8. 
+8. /*
  let fruits = ["Apple", "Banana", "Cherry", "Date", "Mango"];
 
 for (let i = 0; i < fruits.length; i++) {
     console.log(fruits[i]);
 }
+*/
+9. /*  Multiplication table of 7. */
 
+/*for(let i=1;i<=10;i++){
+ console.log(`7 * ${i} = ${7 * i}`);
+ 
+}*/
+
+10. /*In JavaScript, if you omit the increment expression in a for loop, the loop won't automatically increment, so it could lead to an infinite loop unless you manually increment the counter inside the loop body.
+
+🔹 Example:
+
+
+Explanation:
+
+The loop starts with i = 0.
+
+The increment (i++) is done inside the loop, not in the for statement.
+
+This loop still terminates because we manually increment i.
+
+⚠️ What if we don’t increment at all?
+If you don’t increment i anywhere, the loop will run forever:
+
+
+for (let i = 0; i < 5;) {
+    console.log(i);  
+} 
+ let i = 0;
+for (; i < 5;) {   
+    console.log(i);
+               
+} */
 
 
 
