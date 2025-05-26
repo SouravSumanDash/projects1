@@ -36,7 +36,7 @@ for(let i=1;i<=100;i++){
 } 
  console.log("The sum of numbers from 1 to 100 is : " + sum);
   */
- 5.  
+ 5.  /*
 for(let i=1;i<=5;i++){
     let row = "";
     for(let j=1;j<=5;j++) {
@@ -44,6 +44,50 @@ for(let i=1;i<=5;i++){
     }
     console.log(row);
     
+}
+    */
+6. /*Loop Skips odd numbers using continue
+for (let i = 1; i <= 10; i++) {
+    if (i % 2 !== 0) {
+        continue;
+    }
+    console.log(i);
+}
+*/
+7. /*  Infinite for loop 
+for (;;)
+     {
+    console.log("This loop runs forever!");
+    break;
+
+}
+Yes, a for loop can run infinitely if you omit all conditions or make the condition always true.
+
+✅ Example of an infinite for loop in JavaScript:
+for (;;) {
+    console.log("This loop runs forever!");
+}
+🔍 Explanation:
+The syntax for (;;) has no initialization, no condition, and no increment.
+
+Since there’s no condition to stop it, it will run forever unless you break it manually (e.g., with Ctrl + C in terminal or by using a break statement inside).
+
+
+
+🛑 Example with a break to stop it:
+
+let count = 0;
+for (;;) {
+    if (count >= 5) break;
+    console.log("Count:", count);
+    count++;
+} */
+
+8. 
+ let fruits = ["Apple", "Banana", "Cherry", "Date", "Mango"];
+
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
 }
 
 
