@@ -115,3 +115,20 @@ for (let key in data) {
 */
 16.
 
+const data = {
+  apple: 1,
+  banana: "two",
+  apricot: 3,
+  carrot: "four",
+  avocado: 5
+};
+
+const numericOnly = {};
+
+for (let key in data) {
+  if (typeof data[key] === "number") {
+    numericOnly[key] = data[key];
+  }
+}
+
+console.log(numericOnly);
