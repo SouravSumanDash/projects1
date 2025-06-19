@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Fruits Box with User Input</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    .center-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      background-color: #f8f9fa;
+    }
+    .fruit-box {
+      background-color: white;
+      border: 2px solid #007BFF;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="center-container">
+  <div class="fruit-box">
+    <h3>Add Fruits</h3>
+    <input type="text" id="fruitInput" class="form-control mb-3" placeholder="Enter fruit name">
+    <button id="addFruitBtn" class="btn btn-primary">Add Fruit</button>
+    <ul id="fruitList" class="mt-3 list-group"></ul>
+  </div>
+</div>
+
+<!-- Bootstrap JS (Optional) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const fruits = [];
+
+  document.getElementById('addFruitBtn').addEventListener('click', function() {
+    const fruitInput = document.getElementById('fruitInput');
+    const fruitName = fruitInput.value.trim();
+
+    if (fruitName !== "") {
+      fruits.push(fruitName);
+      console.log("Fruits array:", fruits);
+
+      // Create a new list item
+      const li = document.createElement('li');
+      li.textContent = fruitName;
+      li.className = 'list-group-item';
+      document.getElementById('fruitList').appendChild(li);
+
+      fruitInput.value = ""; // Clear the input field
+    } else {
+      alert("Please enter a fruit name!");
+    }
+  });
+</script>
+
+</body>
+</html>

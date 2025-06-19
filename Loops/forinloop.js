@@ -115,6 +115,7 @@ for (let key in data) {
 */
 16.
 
+/*
 const data = {
   apple: 1,
   banana: "two",
@@ -132,3 +133,139 @@ for (let key in data) {
 }
 
 console.log(numericOnly);
+
+*/
+17.
+/*
+In most browsers:
+
+If you add a new property, it might not be visited in the same iteration.
+
+But it may be visited in subsequent iterations if the engine re-evaluates the list of properties.
+
+ Example:
+
+const obj = {
+  a: 1,
+  b: 2
+};
+
+for (let key in obj) {
+  console.log(key);
+  
+  if (key === 'a') {
+    obj.c = 3; 
+  }
+}
+
+
+
+In most cases, c is not logged because the list of keys is determined before the loop starts.
+
+ However, if you:
+Modify existing properties (change their value), those changes will reflect immediately.
+
+Delete properties inside the loop, the deleted keys may or may not be visited, depending on when deletion occurs.
+
+
+*/
+18.
+/*
+const data = {
+  a: 10,
+  b: "hello",
+  c: 20,
+  d: 15,
+  e: "world"
+};
+
+let total = 0;
+
+for (let key in data) {
+  if (typeof data[key] === "number") {
+    total += data[key];
+  }
+}
+
+console.log("Total sum of numeric values:", total);
+
+*/
+
+19.
+/*
+You can use a for-in loop to iterate over an array’s indexes because arrays are just objects with numeric keys (0, 1, 2, ...).
+
+🔸 Example:
+
+
+const fruits = ["apple", "banana", "cherry"];
+
+for (let index in fruits) {
+  console.log(index);           
+  console.log(fruits[index]);   
+}
+
+
+
+ Better alternatives
+for loop (classic)
+
+
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+for-of loop (for array values)
+
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+forEach method
+
+fruits.forEach((fruit) => {
+  console.log(fruit);
+});
+
+*/
+20.
+/*
+What are Enumerable Properties?
+Enumerable properties are the ones that show up during for-in iteration or when using Object.keys().
+
+By default, properties you add via assignment or Object.defineProperty with enumerable: true are enumerable.
+
+Non-enumerable properties are hidden from for-in and most standard iterations.
+
+🔸 Using for-in
+The for-in loop only iterates over enumerable properties of an object (both own and inherited enumerable properties).
+
+🔸 Example:
+
+const obj = {
+  a: 1,
+  b: 2
+};
+
+Object.defineProperty(obj, 'hidden', {
+  value: 42,
+  enumerable: false
+});
+
+for (let key in obj) {
+  console.log(key);  
+}
+
+console.log(Object.keys(obj)); 
+console.log(Object.getOwnPropertyNames(obj)); 
+
+
+
+ How to Identify Enumerable vs Non-Enumerable
+Use for-in: iterates over enumerable properties.
+
+Use Object.keys(obj): gets own enumerable property names.
+
+Use Object.getOwnPropertyNames(obj): gets own properties, both enumerable and non-enumerable.
+
+Use Object.getOwnPropertyDescriptor(obj, 'prop') to inspect if a property is enumerable.
+*/
+

@@ -63,7 +63,7 @@ for (;;)
 }
 Yes, a for loop can run infinitely if you omit all conditions or make the condition always true.
 
-✅ Example of an infinite for loop in JavaScript:
+ Example of an infinite for loop in JavaScript:
 for (;;) {
     console.log("This loop runs forever!");
 }
@@ -74,7 +74,7 @@ Since there’s no condition to stop it, it will run forever unless you break it
 
 
 
-🛑 Example with a break to stop it:
+ Example with a break to stop it:
 
 let count = 0;
 for (;;) {
@@ -99,7 +99,7 @@ for (let i = 0; i < fruits.length; i++) {
 
 10. /*In JavaScript, if you omit the increment expression in a for loop, the loop won't automatically increment, so it could lead to an infinite loop unless you manually increment the counter inside the loop body.
 
-🔹 Example:
+Example:
 
 
 Explanation:
@@ -110,7 +110,7 @@ The increment (i++) is done inside the loop, not in the for statement.
 
 This loop still terminates because we manually increment i.
 
-⚠️ What if we don’t increment at all?
+ What if we don’t increment at all?
 If you don’t increment i anywhere, the loop will run forever:
 
 

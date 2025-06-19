@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=10;
+        var data = "10";
+// Using strict equality
+        if(a===10){
+            console.log("equals");
+            
+        }
+
+        else{
+            console.log("Not equals");
+            
+        }
+
+// OR using ternary operator
+//console.log(a === data ? "equals": "not equals");
+
+var age=19;
+if(age>=18){
+    console.log("eligible to vote");
+    
+} else{
+    console.log("Not eligible to vote");
+    
+}
+
+console.log(
+typeof age != "number" || age > 80 || age < 1
+? "Invalid age" 
+: age >=18
+? "eligible to vote"
+: "Not eligible to vote"
+
+);
+
+
+var weight = 120;
+var height = 1.778; // (in meter square)
+
+var bmi = weight / Math.pow(height,2); // using pow method
+
+var category = (bmi < 18.5)
+    ? "Underweight"
+    : (bmi < 24.9)
+    ? "Normal weight"
+    : (bmi < 29.9)
+    ? "Overweight"
+    : (bmi < 34.9)
+    ? "Obese Class 1"
+    : (bmi < 39.9)
+    ? "Obese Class 2"
+    : "Obese Class 3";
+
+    console.log("BMI:", bmi.toFixed(2));
+    console.log("Category:", category);
+    
+    
+
+
+    </script>
+</body>
+</html>

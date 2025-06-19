@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  console.log("Hello JS world");
+  var a = 10; // Declaring the variable
+  console.log("The value of a :" +a); // Print the variable.
+
+//primitive data types
+var uName="Sourav Dash";
+var age=25;
+var isMarried=true;
+var hasBike=null;
+var acting;
+
+console.log("uName", typeof uName);
+console.log("age", age);
+console.log("isMarried", isMarried);
+console.log("hasBike",typeof hasBike);
+console.log("acting", acting);
+
+//Non-primitive datatypes
+//Array
+
+var myArray = ["Raju", 10, false,null];
+console.log(myArray, typeof myArray);
+
+//to check if it is array or not
+console.log("myArray", Array.isArray(myArray));
+
+//object
+
+var marker = {
+  color: "Blue",
+  brand: "DOMS",
+  price: 30,
+  use: "Writing",
+};
+console.log("marker", marker);
+
+
+var fruits =["Apple","Mango", "Kiwi"];
+console.log("fruits", fruits[1]); // to access a particular element in array use index no. inside[]
+
+var person = {
+  fName:"Ajay",
+  lName:"KM",
+  age:20,
+  eyeColor:"Green",
+  fullName:function() {
+    return person.fName + " " + person.lName;
+// return this.fName + " " + person.lName; // we can use this.fName to access fName
+  },
+};
+
+console.log("fName", person.fName); // first way to access object
+console.log("lName", person["lName"]); // second way to access object
+console.log("person age", person.age); // to access person. age
+console.log("fullName", person.fullName()); // 1st way to access an object inside function
+console.log("fullName", person["fullName"]()); // 2nd way to access an object inside function
+
+//Creating object using new keyword
+var watch = new Object();
+watch.brand="Titan";
+watch.color="Red";
+watch.price=10000;
+console.log("watch", watch);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
