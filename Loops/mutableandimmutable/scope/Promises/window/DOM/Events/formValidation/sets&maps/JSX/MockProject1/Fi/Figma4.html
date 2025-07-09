@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+    }
+
+    .left {
+      flex: 1;
+      position: relative;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .login-layout {
+      position: absolute;
+      width: 364px;
+      left: 159px;
+      top: 148px;
+    }
+
+    .login-title {
+      font-weight: 700;
+      font-size: 30px;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .login-subtitle {
+      font-size: 16px;
+      color: #525252;
+      margin-bottom: 40px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .input-field {
+      display: flex;
+      align-items: center;
+      background: rgba(240, 237, 255, 0.8);
+      border-radius: 16px;
+      padding: 8px 16px;
+    }
+
+    .input-field i {
+      margin-right: 10px;
+      color: #1C1C1C;
+    }
+
+    .input-field input {
+      border: none;
+      outline: none;
+      background: transparent;
+      flex: 1;
+      font-size: 14px;
+      color: #1C1C1C;
+    }
+
+    .login-now {
+      margin-top: 20px;
+      background: linear-gradient(99.78deg, #9181F4 -5.85%, #5038ED 109.55%);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 16px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0px 8px 21px rgba(0, 0, 0, 0.16);
+    }
+
+    .separator {
+      margin: 40px 0 20px 0;
+      text-align: center;
+      color: #1C1C1C;
+      font-weight: 700;
+      font-size: 16px;
+      position: relative;
+    }
+
+    .separator::before,
+    .separator::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #F0EDFF;
+    }
+
+    .separator::before {
+      left: 0;
+    }
+
+    .separator::after {
+      right: 0;
+    }
+
+    .social-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .social-button {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #fff;
+      transition: background-color 0.3s;
+      color: #000;
+      font-size: 14px;
+      font-weight: 500;
+      gap: 10px;
+    }
+
+    .social-button img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    .right {
+      width: 683px;
+      height: 100vh;
+      position: relative;
+      background: linear-gradient(217.64deg, #9181F4 -5.84%, #5038ED 106.73%);
+      overflow: hidden;
+    }
+
+    .glass-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 520px;
+      height: 550px;
+      background: rgba(255, 255, 255, 0.21);
+      border: 1px solid rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(6.8px);
+      -webkit-backdrop-filter: blur(6.8px);
+      border-radius: 46px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 30px;
+      gap: 30px;
+      box-sizing: border-box;
+    }
+
+    .glass-text {
+      flex: 0 0 35%;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 34px;
+      color: #FFFFFF;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      word-break: break-word;
+    }
+
+.side-image {
+  flex: 0 0 65%;
+  max-width: 100%;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 16px;
+  align-self: center;
+}
+
+    .corner-image {
+      position: absolute;
+      bottom: 20px;
+      left: 0px;
+      width: 70px;
+      height: 150px;
+      object-fit: contain;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="login-layout">
+        <h1 class="login-title">LOGIN</h1>
+        <p class="login-subtitle">How to i get started lorem ipsum dolor at?</p>
+        <div class="input-group">
+          <div class="input-field">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" placeholder="Username">
+          </div>
+          <div class="input-field">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Password">
+          </div>
+          <button class="login-now">Login Now</button>
+        </div>
+        <div class="separator">
+          <span>Login with Others</span>
+        </div>
+        <div class="social-buttons">
+          <div class="social-button">
+            <img src="icons8-google-logo-48.png" alt="Google">
+            Login with Google
+          </div>
+          <div class="social-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook logo">
+            Login with Facebook
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="glass-box">
+        <div class="glass-text">
+          Very good <br>
+          works are <br>
+          waiting for <br>
+          you Login <br>
+          Now!!!
+        </div>
+        <img src="girl3.png" class="side-image" alt="girl3">
+        <img src="Group 11.png" class="corner-image" alt="Group 11">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uber Clone Booking</title>
+ <link rel="stylesheet" href="style.css" />
+ <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnh7npflcxxznib8dgZcY20iJnu2A_PL0&libraries=places&callback=initMap">
+</script>
+</head>
+<body>
+  <div class="container">
+    <h2>Book Your Ride</h2>
+    <label for="pickupInput">Pickup Location:</label>
+    <input type="text" id="pickup" placeholder="Enter pickup location">
+
+    <label for="dropoffInput">Drop-off Location:</label>
+    <input type="text" id="dropoff" placeholder="Enter drop-off location">
+
+    <label for="carType">Select Car Type:</label>
+    <select id="carType">
+      <option value="">-- Choose --</option>
+      <option value="Standard">Standard - $1/km</option>
+      <option value="Premium">Premium - $2/km</option>
+      <option value="SUV">SUV - $2.5/km</option>
+    </select>
+
+    <button id="estimateBtn">Get Estimate</button>
+
+    <div class="result" id="result"></div>
+
+    <button id="bookBtn" style="display:none;">Book Now</button>
+    <div class="confirmation" id="confirmation"></div>
+  </div>
+
+  <h3>Booking History</h3>
+  <div id="history">
+  </div>
+
+<div id="map">
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    />
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid bg-primary navbar navbar-dark">
+    <a class="navbar-brand text-white" href="#">My App</a>
+    <button 
+    class="navbar-toggler" 
+    type="button" 
+    data-bs-toggle="collapse" 
+    data-bs-target="#navbarSupportedContent" 
+    aria-controls="navbarSupportedContent" 
+    aria-expanded="false" 
+    aria-label="Toggle navigation"
+    >
+     <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="#"
+          >Home</a
+          >
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input 
+        id ="searchInput"
+        class="form-control me-2"
+         type="search" 
+         placeholder="Search"
+          aria-label="Search"
+          />
+       </form>
+    </div>
+  </div>
+</nav>
+ <div class="container border border-light-subtle p-3">
+    <form name="formData">
+    <div class="mb-3">
+    <label for="exampleInputName1" class="form-label">Name</label>
+    <input 
+    type="text"
+    class="form-control"
+     id="exampleInputName1"
+     name="exampleInputName1"
+     placeholder="enter name"
+     aria-describedby="nameHelp"
+     />
+     <p id="emptyName">name is required</p>
+     <p id="invalidName">please provide a valid name</p>
+     <br />
+     <br />
+    </div>
+
+  <div class="mb-3">
+    <label class="form-label" for="exampleInputNumber1"
+    >Phone Number</label>
+   
+    <input 
+    type="tel" 
+    class="form-control"
+    placeholder="enter ph no."
+    name="exampleInputNumber1"
+    id="exampleInputNumber1"
+    />
+   <p id="emptyNumber">Phone No. is required</p>
+    <p id="invalidNumber">please provide a valid Phone No.</p>
+    <br />
+    <br />
+  </div>
+  <button type="submit" id="submitBtn" class="btn btn-primary">
+    Submit
+  </button>
+  </form>
+  </div>
+   
+  <!-- to localstorage data in table -->
+   <div class="container mt-4">
+   <table class="table table-success table-striped">
+   <thead style="border-bottom: 1px solid black;">
+    <tr>
+      <th>Name</th>
+      <th>Phone Number</th>
+    </tr>
+  </thead>
+  <tbody id="data-table">
+    <!--dynamic data -->
+  </tbody>
+  </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>    	
+<script src="formData.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookMyShow - Ticket Booking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    BookMyShow - Ticket Booking
+  </header>
+
+  <div class="container">
+    <h2>Book Your Ticket</h2>
+
+    <label for="movie">Select Movie</label>
+    <select id="movie">
+      <option value="">--Choose Movie--</option>
+      <option value="Avengers">Avengers: Endgame</option>
+      <option value="Jawan">Jawan</option>
+      <option value="KGF">KGF Chapter 2</option>
+    </select>
+
+    <label for="theater">Select Theater</label>
+    <select id="theater">
+      <option value="">--Choose Theater--</option>
+      <option value="INOX">INOX City Center</option>
+      <option value="PVR">PVR Mall</option>
+      <option value="Cinepolis">Cinepolis Downtown</option>
+    </select>
+
+    <label for="date">Select Date</label>
+    <input type="date" id="date">
+
+    <label for="time">Select Time</label>
+    <input type="time" id="time">
+
+    <div class="seats">
+      <h3>Select Seats</h3>
+      <div id="seats-container"></div>
+    </div>
+
+    <button id="bookBtn">Book Ticket</button>
+
+    <div class="summary" id="summary"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

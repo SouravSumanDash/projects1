@@ -1,0 +1,15 @@
+.randomStyle1{
+    color: white;
+    background-color: blueviolet;
+}
+.randomStyle2{
+    padding: 10px;
+    border-radius: 20px;
+    font-family: cursive;
+    border: 2px solid red;
+}
+.randomStyle3{
+    color: chartreuse;
+    background-color: black;
+}
+

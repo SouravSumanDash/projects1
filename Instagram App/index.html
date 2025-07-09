@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InstaClone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">InstaClone</div>
+    <div>
+    <span id="welcomeUser"></span>
+    <button id="profileBtn">Profile</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+ </header>
+
+  <section class="stories" id="stories">
+    <div class="story" onclick="openStoryModal('Your Story')">+</div>
+    <div class="story" onclick="openStoryModal('Friend 1')"></div>
+    <div class="story" onclick="openStoryModal('Friend 2')"></div>
+  </section>
+
+  <section class="feed" id="feed"></section>
+
+  <footer>
+    <input type="file" id="upload" accept="image/*" />
+    <input type="text" id="caption" placeholder="Write a caption..." />
+    <button onclick="createPost()">Post</button>
+  </footer>
+
+  <!-- Story Modal -->
+  <div id="storyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeStoryModal()">&times;</span>
+      <p id="storyContent"></p>
+    </div>
+  </div>
+
+  <!-- Profile Page -->
+  <div id="profilePage" class="profile-page">
+    <h2>Your Profile</h2>
+    <div id="profilePosts"></div>
+    <button onclick="closeProfile()">Close Profile</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

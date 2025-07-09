@@ -1,0 +1,5 @@
+#emptyName,#invalidName,#emptyNumber,#invalidNumber{
+    color: red;
+    font-size: smaller;
+    display: none;
+}

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    /* Left Side - Cart */
+    .cart-section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      flex: 1;
+      min-width: 300px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .cart-header {
+      font-size: 18px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: black;
+      font-weight: bold;
+    }
+
+    .cart-divider {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 15px 0;
+    }
+
+    .cart-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: black;
+    }
+
+    .cart-subtext {
+      font-size: 14px;
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    .cart-item {
+     background-color: #fff;
+     border: 1px solid #ddd;
+     border-radius: 8px;
+     padding: 15px;
+     margin-bottom: 20px;
+     display: flex;
+     align-items: center;
+     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+    .item-image {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    .item-info {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item-title {
+      font-weight: bold;
+      color: black;
+      margin-bottom: 5px;
+    }
+
+    .item-subtext {
+      color: black;
+      font-size: 14px;
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      margin-left: 10px;
+    }
+
+    .quantity-controls button {
+      border: none;
+      background-color: #eee;
+      padding: 2px 5px;
+      cursor: pointer;
+      font-size: 16px;
+      color: black;
+    }
+
+    .quantity-controls span {
+      font-size: 16px;
+      color: black;
+    }
+
+    .item-cost-delete {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: black;
+      font-size: 16px;
+    }
+
+    .delete-icon {
+      cursor: pointer;
+      color: black;
+      font-size: 20px;
+    }
+
+    /* Right Side - Card (Dark Blue) */
+   .card-section {
+  max-width: 400px;
+  position: relative;
+  background-color: #4169E1;  /* Royal Blue */
+  color: white;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1;
+  min-width: 300px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.card-title-with-logo {
+  margin-top: 50px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title-text {
+  color: white;
+}
+
+.man-logo-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 8px;
+  object-fit: contain;
+  padding: 2px;
+}
+
+  
+
+    .card-types {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card-logo {
+      height: 30px;
+      background-color: white;
+      border-radius: 4px;
+      padding: 2px;
+      object-fit: contain;
+    }
+
+    .see-all {
+      font-size: 14px;
+      color: #99ccff;
+      cursor: pointer;
+      align-self: center;
+    }
+
+    .card-input {
+      margin-bottom: 15px;
+    }
+
+    .card-input label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .card-input input {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      background-color: rgba(255,255,255,0.2);
+      color: white;
+    }
+
+    .card-input input::placeholder {
+      color: #ccc;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .row .card-input {
+      flex: 1;
+    }
+
+    .summary {
+      margin-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.5);
+      padding-top: 15px;
+      font-size: 16px;
+    }
+
+    .summary p {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+    }
+
+    .checkout-button {
+      margin-top: 20px;
+      background-color: green;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      width: 100%;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Side - Cart -->
+    <div class="cart-section">
+      <div class="cart-header">
+        <span>&lt;</span>
+        Shopping Continue
+      </div>
+
+      <hr class="cart-divider">
+
+      <div class="cart-title">
+        Shopping Cart
+      </div>
+      <div class="cart-subtext">
+        You have 3 item in your cart
+      </div>
+
+      <!-- Cart Item 1 -->
+      <div class="cart-item">
+        <img src="https://www.shutterstock.com/image-photo/delicious-pizza-on-white-background-260nw-2468771449.jpg" alt="Italy Pizza" class="item-image">
+        <div class="item-info">
+          <div class="item-title">Italy Pizza</div>
+          <div class="item-subtext">Extra cheese and topping</div>
+        </div>
+        <div class="quantity-controls">
+          <button>&uarr;</button>
+          <span>1</span>
+          <button>&darr;</button>
+        </div>
+        <div class="item-cost-delete">
+          <span>$681</span>
+          <div class="delete-icon">&#128465;</div>
+        </div>
+      </div>
+
+      <!-- Cart Item 2 -->
+      <div class="cart-item">
+        <img src="https://www.shutterstock.com/image-photo/appetizer-combo-plate-white-background-600nw-2341054889.jpg" alt="Combo Plate" class="item-image">
+        <div class="item-info">
+          <div class="item-title">Combo Plate</div>
+          <div class="item-subtext">Extra cheese and topping</div>
+        </div>
+        <div class="quantity-controls">
+          <button>&uarr;</button>
+          <span>1</span>
+          <button>&darr;</button>
+        </div>
+        <div class="item-cost-delete">
+          <span>$681</span>
+          <div class="delete-icon">&#128465;</div>
+        </div>
+      </div>
+
+      <!-- Cart Item 3 -->
+      <div class="cart-item">
+        <img src="https://www.shutterstock.com/image-photo/serving-mexican-rice-garnished-fresh-260nw-2332116275.jpg" alt="Spanish Rice" class="item-image">
+        <div class="item-info">
+          <div class="item-title">Spanish Rice</div>
+          <div class="item-subtext">Extra garlic</div>
+        </div>
+        <div class="quantity-controls">
+          <button>&uarr;</button>
+          <span>1</span>
+          <button>&darr;</button>
+        </div>
+        <div class="item-cost-delete">
+          <span>$681</span>
+          <div class="delete-icon">&#128465;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side - Card Details -->
+    <div class="card-section">
+      <div class="man-logo"></div>
+      <div class="card-title-with-logo">
+      <span class="card-title-text">Card Details</span>
+      <img src="man-logo.jpg" alt="Man Logo" class="man-logo-img">
+      </div>
+
+      <div class="card-types">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard" class="card-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="card-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Rupay-Logo.png" alt="RuPay" class="card-logo">
+        <div class="see-all">See all</div>
+      </div>
+
+      <div class="card-input">
+        <label>Name on Card</label>
+        <input type="text" placeholder="Name">
+      </div>
+
+      <div class="card-input">
+        <label>Card Number</label>
+        <input type="text" value="1111 2222 3333 4444">
+      </div>
+
+      <div class="row">
+        <div class="card-input">
+          <label>Expiration Date</label>
+          <input type="text" placeholder="mm/yy">
+        </div>
+        <div class="card-input">
+          <label>CVV</label>
+          <input type="text" value="123">
+        </div>
+      </div>
+
+      <div class="summary">
+        <p><span>Subtotal</span><span>$1,668</span></p>
+        <p><span>Shipping</span><span>$4</span></p>
+        <p><span>Total (Tax incl.)</span><span>$1,672</span></p>
+      </div>
+
+      <button class="checkout-button">
+        <span>$1,672</span>
+        <span>Checkout</span>
+      </button>
+    </div>
+  </div>
+</body>
+</html>

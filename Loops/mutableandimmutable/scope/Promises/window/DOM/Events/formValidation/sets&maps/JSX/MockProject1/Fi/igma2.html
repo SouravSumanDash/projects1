@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>eCommerce Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 40px;
+      background: #e0e0e0;
+    }
+
+    .hero-text {
+      max-width: 50%;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .hero img {
+      max-width: 40%;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .product-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+      font-size: 20px;
+    }
+
+    .product-card p {
+      color: #777;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">MyStore</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Discover Amazing Interiors</h1>
+      <p>Shop the latest furniture collections and accessories for your home. Designed for modern living.</p>
+    </div>
+    <img src="https://via.placeholder.com/400x300" alt="Hero image"/>
+  </section>
+
+  <section class="product-grid">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x200" alt="Product 1"/>
+      <h3>Modern Chair</h3>
+      <p>$120</p>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x200" alt="Product 2"/>
+      <h3>Wooden Table</h3>
+      <p>$220</p>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x200" alt="Product 3"/>
+      <h3>Floor Lamp</h3>
+      <p>$80</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 MyStore. All rights reserved.
+  </footer>
+
+</body>
+</html>

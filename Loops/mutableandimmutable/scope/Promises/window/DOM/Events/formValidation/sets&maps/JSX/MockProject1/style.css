@@ -1,0 +1,144 @@
+nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: #f8f9fa;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: red;
+        font-weight: 500;
+      }
+
+      .search-icon {
+        font-size: 20px;
+        cursor: pointer;
+        color: #333;
+      }
+
+      .head {
+        text-align: center;
+        font-size: 42px;
+        margin-top: 30px;
+      }
+
+      .list-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .list {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        padding: 0;
+      }
+
+      .list li a {
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+      }
+        .table-container {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        
+        
+
+     }
+      table {
+      width: 90%; 
+      margin: px auto;
+      border-collapse: collapse;
+ 
+    }
+
+     img {
+        width: 250px;
+        height: auto;
+     }
+
+     th, td {
+        padding: 10px;
+        border: none;
+     }
+     .checkbox {
+        text-align: center;
+     }
+     
+     .button {
+        text-align: center;
+        margin: 30px;
+     }
+
+     button {
+        margin: 30px;
+        margin-left: 100px;
+        background-color: black;
+        color: white;
+     }
+
+     .heading {
+        text-align: center;
+        margin: 20px;
+     }
+
+     .checkbox hr {
+
+        margin-left: 40%;
+        margin-right: 40%;
+     }
+     .subscribe {
+        display: flex;
+     }
+
+     .paragraph h1  {
+        text-align: center;
+        justify-content: center;
+        margin-left: 30px;
+     }
+
+      .paragraph button {
+       display: block;
+        margin: auto;
+      }
+
+      .search-icon {
+        display: flex;
+        gap: 15px;
+
+      }
+
+      .subscribe {
+        margin: 150px;
+        
+      }
+
+      hr {
+        margin-left: 170px;
+        margin-right: 150px;
+      }
+      
+      .footer-content {
+        
+        display: flex; 
+      }
+      .footer-links {
+        display: flex;
+        
+      }
