@@ -1,47 +1,6 @@
 let feed = document.getElementById("feed");
 let profilePosts = document.getElementById("profilePosts");
 
-function createPost() {
-  const upload = document.getElementById("upload").files[0];
-  const caption = document.getElementById("caption").value.trim();
-
-  if (!upload) {
-    alert("Please select an image.");
-    return;
-  }
-
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    const imgURL = e.target.result;
-    const post = {
-      img: imgURL,
-      caption,
-      likes: 0,
-      comments: []
-    };
-
-    savePost(post);
-    addPostToFeed(post);
-    document.getElementById("caption").value = "";
-    document.getElementById("upload").value = "";
-  };
-  reader.readAsDataURL(upload);
-}
-
-function addPostToFeed(post) {
-  const div = document.createElement("div");
-  div.classList.add("post");
-  div.innerHTML = `
-    <img src="${post.img}" alt="Post Image"/>
-    <p>${post.caption}</p>
-    <div class="actions">
-      <button onclick="likePost(this)">❤️ Like (<span>${post.likes}</span>)</button>
-      <button onclick="commentPost(this)">💬 Comment</button>
-    </div>
-  `;
-  feed.prepend(div);
-}
-
 function likePost(btn) {
   const countSpan = btn.querySelector("span");
   let count = parseInt(countSpan.textContent) + 1;
