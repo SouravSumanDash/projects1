@@ -8,34 +8,37 @@
 </head>
 <body>
   <header>
-    <div class="logo">InstaClone</div>
-    <div>
-    <span id="welcomeUser"></span>
-    <button id="profileBtn">Profile</button>
-    <button onclick="logout()">Logout</button>
-  </div>
- </header>
+    <div class="header-container">
+      <div class="logo">InstaClone</div>
+      <div class="header-actions">
+        <button type="button" id="welcomeUserBtn" onclick="openProfile()">
+          <span id="welcomeUser">Sourav</span>
+        </button>
+        <button type="button" onclick="logout()">Logout
+       </button>
+      </div>
+    </div>
+  </header>
 
   <section class="stories" id="stories">
-    <button class="story" onclick="openStoryModal('Your Story')">+</button>
-    <button class="story" onclick="openStoryModal('Friend 1')">F1</button>
-    <button class="story" onclick="openStoryModal('Friend 2')">F2</button>
+    <button type="button" class="story" onclick="openStoryModal('Your Story')">+</button>
+    <button type="button" class="story" onclick="openStoryModal('Friend 1')">F1</button>
+    <button type="button" class="story" onclick="openStoryModal('Friend 2')">F2</button>
   </section>
 
   <section class="feed" id="feed"></section>
 
- <footer>
-  <input type="file" id="upload" accept="image/*" title="Upload Image" />
-  <input type="text" id="caption" placeholder="Write a caption..." />
-  <button onclick="createPost()">Post</button>
-</footer>
-
+  <footer>
+    <input type="file" id="upload" accept="image/*" title="Upload Image" />
+    <input type="text" id="caption" placeholder="Write a caption..." />
+    <button type="button" onclick="createPost()">Post</button>
+  </footer>
 
   <!-- Story Modal -->
-  <div id="storyModal" class="modal">
+  <div id="storyModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="storyContent">
     <div class="modal-content">
-     <button class="close" onclick="closeStoryModal()" aria-label="Close Story Modal">&times;</button>
-     <p id="storyContent"></p>
+      <button type="button" class="close" onclick="closeStoryModal()" aria-label="Close Story Modal">&times;</button>
+      <p id="storyContent"></p>
     </div>
   </div>
 
@@ -43,7 +46,7 @@
   <div id="profilePage" class="profile-page">
     <h2>Your Profile</h2>
     <div id="profilePosts"></div>
-    <button onclick="closeProfile()">Close Profile</button>
+    <button type="button" onclick="closeProfile()">Close Profile</button>
   </div>
 
   <script src="script.js"></script>
